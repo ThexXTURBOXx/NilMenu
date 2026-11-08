@@ -2,12 +2,13 @@ package net.scoobis.nilmenu;
 
 import net.minecraft.src.GuiButton;
 import net.minecraft.src.GuiMainMenu;
+import nilloader.api.ClassRetransformer;
 import nilloader.api.lib.mini.MiniTransformer;
 import nilloader.api.lib.mini.PatchContext;
 import nilloader.api.lib.mini.annotation.Patch;
 
 @Patch.Class("com.thevoxelbox.voxelmenu.GuiMainMenuVoxelBox")
-public class VoxelMainMenuTransformer extends MiniTransformer {
+public class VoxelMainMenuTransformer extends MiniTransformer implements ClassRetransformer {
 
     @Patch.Method("initPanelButtons()V")
     public void patchButtons(PatchContext ctx) {

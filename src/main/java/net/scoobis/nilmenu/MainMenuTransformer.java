@@ -3,12 +3,13 @@ package net.scoobis.nilmenu;
 import net.minecraft.src.GuiButton;
 import net.minecraft.src.GuiMainMenu;
 import net.minecraft.src.StringTranslate;
+import nilloader.api.ClassRetransformer;
 import nilloader.api.lib.mini.MiniTransformer;
 import nilloader.api.lib.mini.PatchContext;
 import nilloader.api.lib.mini.annotation.Patch;
 
 @Patch.Class("net.minecraft.src.GuiMainMenu")
-public class MainMenuTransformer extends MiniTransformer {
+public class MainMenuTransformer extends MiniTransformer implements ClassRetransformer {
 
     @Patch.Method("addSingleplayerMultiplayerButtons(IILnet/minecraft/src/StringTranslate;)V")
     public void patchButtons(PatchContext ctx) {
