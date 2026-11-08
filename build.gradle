@@ -2,10 +2,13 @@ plugins {
 	id 'com.unascribed.nilgradle' version '1.4.4'
 }
 
-// You can change this to be higher if you like. NilLoader itself is compiled
-// for Java 8 for compatibility with older versions.
-sourceCompatibility = 8
-targetCompatibility = 8
+java {
+	// You can change this to be higher if you like. NilLoader itself is compiled
+	// for Java 8 for compatibility with older versions.
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(8)
+	}
+}
 
 group = 'net.scoobis'
 archivesBaseName = 'NilMenu'
